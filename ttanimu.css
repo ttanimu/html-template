@@ -1,0 +1,36 @@
+body {
+    counter-reset: chapter;
+}
+h1 {
+    counter-reset: chapter;
+}
+h2 {
+    counter-reset: sub-chapter;
+}
+h3 {
+    counter-reset: section;
+}
+h4 {
+    counter-reset: sub-section;
+}
+
+h2::before {
+    counter-increment: chapter;
+    content: counter(chapter) ". ";
+}
+h3::before {
+    counter-increment: sub-chapter;
+    content: counter(chapter) "-" counter(sub-chapter) ". ";
+}
+h4::before {
+    counter-increment: section;
+    content: counter(chapter) "-" counter(sub-chapter) "-" counter(section) ". ";
+}
+h5::before {
+    counter-increment: sub-section;
+    content: counter(chapter) "-" counter(sub-chapter) "-" counter(section) "-" counter(sub-section) ". ";
+}
+
+pre {
+    border-style: ridge;
+}
